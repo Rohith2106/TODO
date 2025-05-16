@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const API_URL = 'http://localhost:5000'
 
@@ -81,7 +83,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="max-w-2xl mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">Todo List</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">Reminder List</h1>
         
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -96,6 +98,7 @@ function App() {
           onDelete={deleteTodo} 
         />
       </div>
+      <ToastContainer />
     </div>
   )
 }
